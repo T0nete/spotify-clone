@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+}
+
+#app {
+  display: grid;
+  grid-template-areas:
+    'aside main main'
+    'player player player';
+  grid-template-columns: 280px 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-gap: 8px;
+}
