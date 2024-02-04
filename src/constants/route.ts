@@ -1,7 +1,13 @@
 import { MdHomeFilled } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
+import { IconType } from "react-icons";
 
-export const routes = [
+export interface Route {
+  path: string;
+  title: string;
+  icon: IconType;
+}
+export const routes: Route[] = [
   {
     path: "/",
     title: "Home",
