@@ -1,8 +1,12 @@
 import React from "react";
 import { routes } from "../constants/route";
 import SideBarItem from "./SideBarItem";
+// import { useNavigation } from "react-router-dom";
 
 const SideBar: React.FC = () => {
+  //   const navigate = useNavigation();
+  //   console.log("navigate.name", navigate.location);
+
   return (
     <div className="flex h-full flex-col gap-2">
       <div className="rounded-lg bg-[#121212] p-6 text-white">
@@ -10,9 +14,10 @@ const SideBar: React.FC = () => {
           {routes.map((route) => {
             return (
               <SideBarItem
-                key={route.path}
+                key={route.title}
                 icon={route.icon}
                 label={route.title}
+                selected={false}
               />
             );
           })}
