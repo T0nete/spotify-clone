@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <aside className="rounded-lg [grid-area:aside]">
         <SideBar />
       </aside>
-      <main className="bg-black-400 rounded-lg [grid-area:main]">
+      <main className="bg-black-300 rounded-lg [grid-area:main]">
         <HeaderBar />
         {children}
       </main>

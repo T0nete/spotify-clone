@@ -1,9 +1,11 @@
 import React from "react";
+import MainPlaylistList from "./PlayList/MainPlaylistList";
 
 const HomePage: React.FC = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
+    <div className="flex flex-col px-6">
+      <h1 className="text-2xl font-bold text-white">Hey User!</h1>
+      <MainPlaylistList />
     </div>
   );
 };

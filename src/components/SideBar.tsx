@@ -8,7 +8,7 @@ const SideBar: React.FC = () => {
 
   return (
     <div className="flex h-full flex-col gap-2">
-      <div className="bg-black-400 rounded-lg p-6">
+      <div className="bg-black-300 rounded-lg p-6">
         <ul className="flex flex-col gap-y-4">
           {routes.map((route) => {
             return (
@@ -22,7 +22,7 @@ const SideBar: React.FC = () => {
           })}
         </ul>
       </div>
-      <div className="bg-black-400 flex h-full rounded-lg"></div>
+      <div className="bg-black-300 flex h-full rounded-lg"></div>
     </div>
   );
 };
