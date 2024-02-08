@@ -1,5 +1,5 @@
 import { playlist } from "../../constants/playlist";
-import MainPlaylistItem from "./MainPlaylistItem";
+import MainPlaylistItem from "./MainPlayListItem";
 
 const MainPlaylistList: React.FC = () => {
   return (
