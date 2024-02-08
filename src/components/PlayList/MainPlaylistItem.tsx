@@ -1,20 +1,24 @@
+import { Link } from "react-router-dom";
 import PlayButton from "../buttons/PlayButtont";
+import { PlayList } from "../../constants/playlist";
 
 interface MainPlaylistItemProps {
-  cover: string;
-  title: string;
+  playList: PlayList;
 }
-const MainPlaylistItem: React.FC<MainPlaylistItemProps> = ({ cover, title }) => {
+const MainPlaylistItem: React.FC<MainPlaylistItemProps> = ({ playList }) => {
   return (
-    <div className="bg-black-200 hover:bg-black-100 flex flex-row items-center rounded-lg">
+    <Link
+      to={`/playlist/${playList.id}`}
+      className="flex flex-row items-center rounded-lg bg-black-200  hover:cursor-pointer hover:bg-black-100"
+    >
       <div className="w-1/6">
-        <img className="rounded-l-md" src={cover} alt="playlist cover" />
+        <img className="rounded-l-md" src={playList.cover} alt="playlist cover" />
       </div>
-      <div className="w-5/6">
-        <p className="font-bold text-white">{title}</p>
+      <div className="flex w-5/6 flex-row items-center justify-between px-2">
+        <p className="font-bold text-white">{playList.title}</p>
+        <PlayButton size="lg" onClick={() => {}} />
       </div>
-      <PlayButton size="sm" onClick={() => {}} />
-    </div>
+    </Link>
   );
 };
 
