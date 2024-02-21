@@ -18,22 +18,24 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
 
   return (
     <div className="overflow-y-auto p-5">
-      <div className="flex h-64 flex-row items-center gap-6 pb-5">
-        <img src={playListData.cover} alt={playListData.title} className="h-full rounded-md" />
-        <div className="flex flex-col gap-5 text-sm">
+      <div className="flex flex-row items-center gap-6">
+        <img src={playListData.cover} alt={playListData.title} className="h-32 w-32 rounded-md xl:h-60 xl:w-60" />
+        <div className="flex flex-col gap-3 text-sm">
           <div className="flex flex-col text-white">
             <p className="">Playlist</p>
-            <h1 className="text-8xl font-bold ">{playListData.title}</h1>
+            <h1 className="text-3xl font-bold lg:text-7xl xl:text-8xl ">{playListData.title}</h1>
           </div>
-          <div className="flex flex-row">
-            <p>{playListData.description}</p>
-            <p>{playListData.songs.length} songs</p>
+          <div className="flex flex-col gap-1">
+            <p className="text-xs">{playListData.description}</p>
+            <p className="text-xs">
+              <span className="font-semibold">{playListData.songs.length}</span> songs
+            </p>
           </div>
         </div>
       </div>
 
-      <div className=" p-2">
-        {/* SONGS TABLE */}
+      {/* SONGS TABLE */}
+      {/* <div className=" p-2">
         <table className="w-full">
           <thead>
             <tr className="border-b-2 border-b-[#b3b3b3]">
@@ -58,7 +60,7 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
       <ul>
         {/* {playlist.map((song, index) => (
           <li key={index}>{song}</li>
