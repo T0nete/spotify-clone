@@ -7,11 +7,11 @@ interface LayoutProps {
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div id="app" className="text-default-text bg-black-900 h-screen p-2">
+    <div id="app" className="h-screen bg-black-900 p-2 text-default-text">
       <aside className="rounded-lg [grid-area:aside]">
         <SideBar />
       </aside>
-      <main className="bg-black-300 rounded-lg [grid-area:main]">
+      <main className="rounded-lg bg-black-300 [grid-area:main]">
         <HeaderBar />
         {children}
       </main>

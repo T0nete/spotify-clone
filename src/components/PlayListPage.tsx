@@ -39,9 +39,9 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
             <tr className="border-b-2 border-b-[#b3b3b3]">
               <th className="text-left">#</th>
               <th className="text-left">Title</th>
-              <th className="text-left">Artist</th>
-              <th className="text-left">Album</th>
-              <th className="text-left">Date Added</th>
+              <th className="md:hiddens text-left">Artist</th>
+              <th className="md:hiddens text-left">Album</th>
+              <th className="md:hiddens text-left">Date Added</th>
               <th className="text-left">Duration</th>
             </tr>
           </thead>

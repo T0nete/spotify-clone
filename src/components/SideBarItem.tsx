@@ -13,8 +13,8 @@ const SideBarItem: React.FC<SideBarItemProps> = ({ routeItem, label, selected })
       <li
         className={`flex cursor-pointer flex-row  items-center gap-x-4 rounded-lg p-2 ${selected && "text-white"}  duration-400 transition-all ease-linear hover:text-white`}
       >
-        <routeItem.icon size={32} />
-        <p className="text-lg font-semibold">{label}</p>
+        <routeItem.icon size={24} />
+        <p className="text-md font-semibold">{label}</p>
       </li>
     </Link>
   );
