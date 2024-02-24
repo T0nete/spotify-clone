@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PlayList, playlist } from "../constants/playlist";
+import PlayListTable from "./PlayListTable";
 
 interface PlaylistPageProps {}
 
@@ -36,59 +37,8 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
 
       {/* SONGS TABLE */}
       <section>
-        <div className="">
-          <table className="table-auto">
-            <thead className="border-b-[0.5px]">
-              <tr className="sticky top-14 h-9 bg-black-100 text-left text-sm">
-                <th className="table-cell min-w-12 text-center">#</th>
-                <th className="table-cell w-full ">Title</th>
-                <th className="hidden w-full justify-start">Artist</th>
-                <th className="hidden min-w-24 md:table-cell">Album</th>
-                <th className="hidden w-full lg:table-cell">Date Added</th>
-                <th className="table-cell min-w-12 text-center">Duration</th>
-              </tr>
-            </thead>
-            <tbody className="">
-              {playListData.songs.map((song, index) => (
-                <tr key={index} className="h-14 text-sm font-normal hover:bg-black-100">
-                  <td className="table-cell min-w-12 text-center">{index + 1}</td>
-                  <td className="table-cell w-full">{song.title}</td>
-                  <td className="hidden w-full justify-start">Artist</td>
-                  <td className="hidden w-full md:table-cell">Album</td>
-                  <td className="hidden w-full lg:table-cell">Date Added</td>
-                  <td className="table-cell min-w-12 text-center">Duration</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <PlayListTable playListData={playListData} />
       </section>
-      {/* <div className=" p-2">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b-2 border-b-[#b3b3b3]">
-              <th className="text-left">#</th>
-              <th className="text-left">Title</th>
-              <th className="md:hiddens text-left">Artist</th>
-              <th className="md:hiddens text-left">Album</th>
-              <th className="md:hiddens text-left">Date Added</th>
-              <th className="text-left">Duration</th>
-            </tr>
-          </thead>
-          <tbody>
-            {playListData.songs.map((song, index) => (
-              <tr key={index} className="h-6 border-b-2 border-b-[#b3b3b3]">
-                <td>{index + 1}</td>
-                <td>{song.title}</td>
-                <td>Artist</td>
-                <td>Album</td>
-                <td>Date Added</td>
-                <td>Duration</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
     </div>
   );
 };
