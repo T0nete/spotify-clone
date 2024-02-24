@@ -17,8 +17,8 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
   if (!playListData) return null;
 
   return (
-    <div className="overflow-y-auto p-5">
-      <div className="flex flex-row items-center gap-6">
+    <div className="">
+      <div className="flex flex-row items-center gap-6 p-5">
         <img src={playListData.cover} alt={playListData.title} className="h-32 w-32 rounded-md xl:h-60 xl:w-60" />
         <div className="flex flex-col gap-3 text-sm">
           <div className="flex flex-col text-white">
@@ -35,6 +35,34 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
       </div>
 
       {/* SONGS TABLE */}
+      <section>
+        <div className="">
+          <table className="table-auto">
+            <thead className="border-b-[0.5px]">
+              <tr className="sticky top-14 h-9 bg-black-100 text-left text-sm">
+                <th className="table-cell min-w-12 text-center">#</th>
+                <th className="table-cell w-full ">Title</th>
+                <th className="hidden w-full justify-start">Artist</th>
+                <th className="hidden min-w-24 md:table-cell">Album</th>
+                <th className="hidden w-full lg:table-cell">Date Added</th>
+                <th className="table-cell min-w-12 text-center">Duration</th>
+              </tr>
+            </thead>
+            <tbody className="">
+              {playListData.songs.map((song, index) => (
+                <tr key={index} className="h-14 text-sm font-normal hover:bg-black-100">
+                  <td className="table-cell min-w-12 text-center">{index + 1}</td>
+                  <td className="table-cell w-full">{song.title}</td>
+                  <td className="hidden w-full justify-start">Artist</td>
+                  <td className="hidden w-full md:table-cell">Album</td>
+                  <td className="hidden w-full lg:table-cell">Date Added</td>
+                  <td className="table-cell min-w-12 text-center">Duration</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
       {/* <div className=" p-2">
         <table className="w-full">
           <thead>
@@ -61,11 +89,6 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
           </tbody>
         </table>
       </div> */}
-      <ul>
-        {/* {playlist.map((song, index) => (
-          <li key={index}>{song}</li>
-        ))} */}
-      </ul>
     </div>
   );
 };
