@@ -8,7 +8,7 @@ export const buttonsDefinitions = {
   },
   heart: {
     icon: LuHeart,
-    buttonClassName: "flex items-center justify-center rounded-full bg-[#1fdf64] p-2 hover:scale-105",
+    buttonClassName: "flex items-center justify-center  p-2 hover:scale-105",
   },
 };
 

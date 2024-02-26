@@ -11,6 +11,13 @@ const PlaylistCommandButtons: React.FC = () => {
         onClick={() => {}}
         className={buttonsDefinitions.play.buttonClassName}
       />
+      <SizedButton
+        buttonSize="lg"
+        iconSize="lg"
+        buttonType="heart"
+        onClick={() => {}}
+        className={buttonsDefinitions.heart.buttonClassName}
+      />
     </div>
   );
 };
