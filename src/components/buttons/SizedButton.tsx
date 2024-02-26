@@ -20,13 +20,13 @@ const SizedButton: React.FC<SizedButtonProps> = ({
 }) => {
   const button = buttonsDefinitions[buttonType];
   const sizeButton = getButtonSize("hw", buttonSize);
-  const mergedClassNames = twMerge(className, button.buttonClassName, sizeButton);
+  const mergedClassNames = twMerge(button.buttonClassName, sizeButton, className);
 
   const IconComponent = buttonsDefinitions[buttonType].icon;
   const sizeIcon = getIconSize(iconSize);
 
   return (
-    <button className={mergedClassNames} onClick={onClick} title="PLAY MUSIC">
+    <button className={mergedClassNames} onClick={onClick}>
       <IconComponent size={sizeIcon} className={iconClassName} />
     </button>
   );

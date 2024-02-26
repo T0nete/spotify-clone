@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import PlayerButtons from "./Player/PlayerButtons";
 
 const MusicPlayer: React.FC = () => {
   return (
-    <div>
-      <h1 className="text-white">MusicPlayer</h1>
+    <div className="flex">
+      <div className="flex-grow"></div>
+      <div className="flex-grow-2">
+        <PlayerButtons />
+      </div>
+      <div className="flex-grow"></div>
     </div>
-  )
-}
+  );
+};
 
-export default MusicPlayer
+export default MusicPlayer;
