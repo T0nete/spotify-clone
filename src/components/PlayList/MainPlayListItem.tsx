@@ -16,7 +16,7 @@ const MainPlaylistItem: React.FC<MainPlaylistItemProps> = ({ playList }) => {
       </div>
       <div className="flex w-5/6 flex-row items-center justify-between px-2">
         <p className="font-bold text-white">{playList.title}</p>
-        <PlayButton size="lg" onClick={() => {}} />
+        <PlayButton buttonSize="md" iconSize="lg" onClick={() => {}} />
       </div>
     </Link>
   );

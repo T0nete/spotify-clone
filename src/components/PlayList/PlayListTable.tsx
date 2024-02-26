@@ -1,4 +1,4 @@
-import { PlayList } from "../constants/playlist";
+import { PlayList } from "../../constants/playlist";
 
 interface PlayListTableProps {
   playListData: PlayList;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PlayList, playlist } from "../constants/playlist";
-import PlayListTable from "./PlayListTable";
+import PlayListTable from "./PlayList/PlayListTable";
+import PlaylistCommandButtons from "./PlayList/PlaylistCommandButtons";
 
 interface PlaylistPageProps {}
 
@@ -34,7 +35,9 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
           </div>
         </div>
       </div>
-
+      <section>
+        <PlaylistCommandButtons />
+      </section>
       {/* SONGS TABLE */}
       <section>
         <PlayListTable playListData={playListData} />
