@@ -3,20 +3,15 @@ import { buttonsDefinitions } from "../buttons/iconsDefinitions";
 
 const PlaylistCommandButtons: React.FC = () => {
   return (
-    <div className="flex flex-row p-5">
+    <div className="flex flex-row gap-5 p-5">
+      <SizedButton buttonType="play" buttonSize="lg" iconSize="lg" onClick={() => {}} iconClassName="ml-1" />
       <SizedButton
-        buttonSize="lg"
-        iconSize="lg"
-        buttonType="play"
-        onClick={() => {}}
-        className={buttonsDefinitions.play.buttonClassName}
-      />
-      <SizedButton
-        buttonSize="lg"
-        iconSize="lg"
         buttonType="heart"
+        buttonSize="xl"
+        iconSize="xl"
         onClick={() => {}}
         className={buttonsDefinitions.heart.buttonClassName}
+        iconClassName="hover:white hover:text-white"
       />
     </div>
   );

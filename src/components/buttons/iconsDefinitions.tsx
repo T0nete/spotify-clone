@@ -4,31 +4,12 @@ import { LuHeart } from "react-icons/lu";
 export const buttonsDefinitions = {
   play: {
     icon: IoPlaySharp,
-    buttonClassName: "flex items-center justify-center rounded-full bg-[#1fdf64] p-2 hover:scale-105",
+    iconColor: "black",
+    buttonClassName: "flex items-center justify-center text-black-900 rounded-full bg-[#1fdf64] p-2 hover:scale-105",
   },
   heart: {
     icon: LuHeart,
-    buttonClassName: "flex items-center justify-center  p-2 hover:scale-105",
+    iconColor: "#b3b3b3",
+    buttonClassName: "flex items-center justify-center p-2 hover:scale-105 text-default-color hover:text-white",
   },
-};
-
-interface IconsProps {
-  iconSize?: "sm" | "md" | "lg";
-  color?: string;
-  iconType: keyof typeof buttonsDefinitions;
-  className?: string;
-  onClick: () => void;
-}
-
-export const getIcon = (props: IconsProps): JSX.Element => {
-  const { iconSize = "sm", color, iconType, className } = props;
-  const sizeIcon = iconSize === "sm" ? 8 : iconSize === "md" ? 16 : 24;
-
-  const IconComponent = buttonsDefinitions[iconType].icon;
-
-  if (!IconComponent) {
-    throw new Error(`Button type ${iconType} is not defined`);
-  }
-
-  return <IconComponent size={sizeIcon} color={color ?? "black"} className={className} />;
 };

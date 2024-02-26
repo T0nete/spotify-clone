@@ -1,11 +1,11 @@
 import { twMerge } from "tailwind-merge";
-import { getButtonSize } from "../../utils/utils";
-import { buttonsDefinitions, getIcon } from "./iconsDefinitions";
+import { TSize, getButtonSize, getIconSize } from "../../utils/utils";
+import { buttonsDefinitions } from "./iconsDefinitions";
 
 interface SizedButtonProps {
   buttonType: keyof typeof buttonsDefinitions;
-  buttonSize?: "sm" | "md" | "lg";
-  iconSize?: "sm" | "md" | "lg";
+  buttonSize?: TSize;
+  iconSize?: TSize;
   className?: string;
   iconClassName?: string;
   onClick: () => void;
@@ -18,13 +18,16 @@ const SizedButton: React.FC<SizedButtonProps> = ({
   iconClassName,
   onClick,
 }) => {
+  const button = buttonsDefinitions[buttonType];
   const sizeButton = getButtonSize("hw", buttonSize);
-  const mergedClassNames = twMerge(className, sizeButton);
-  const iconElement = getIcon({ iconSize, iconType: buttonType, className: iconClassName, onClick });
+  const mergedClassNames = twMerge(className, button.buttonClassName, sizeButton);
+
+  const IconComponent = buttonsDefinitions[buttonType].icon;
+  const sizeIcon = getIconSize(iconSize);
 
   return (
-    <button className={mergedClassNames} onClick={onClick}>
-      {iconElement}
+    <button className={mergedClassNames} onClick={onClick} title="PLAY MUSIC">
+      <IconComponent size={sizeIcon} className={iconClassName} />
     </button>
   );
 };
