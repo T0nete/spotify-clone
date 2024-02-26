@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import PlayButton from "../buttons/PlayButtont";
 import { PlayList } from "../../constants/playlist";
+import SizedButton from "../buttons/SizedButton";
 
 interface MainPlaylistItemProps {
   playList: PlayList;
@@ -16,7 +16,7 @@ const MainPlaylistItem: React.FC<MainPlaylistItemProps> = ({ playList }) => {
       </div>
       <div className="flex w-5/6 flex-row items-center justify-between px-2">
         <p className="font-bold text-white">{playList.title}</p>
-        <PlayButton buttonSize="md" iconSize="lg" onClick={() => {}} />
+        <SizedButton buttonType="play" buttonSize="md" iconSize="lg" onClick={() => {}} className="ml-1" />
       </div>
     </Link>
   );

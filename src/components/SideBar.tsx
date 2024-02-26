@@ -12,12 +12,9 @@ const SideBar: React.FC = () => {
         <ul className="flex flex-col gap-y-2">
           {routes.map((route) => {
             return (
-              <SideBarItem
-                key={route.title}
-                routeItem={route}
-                label={route.title}
-                selected={location.pathname === route.path}
-              />
+              <li key={route.title}>
+                <SideBarItem routeItem={route} label={route.title} selected={location.pathname === route.path} />
+              </li>
             );
           })}
         </ul>
