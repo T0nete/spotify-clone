@@ -1,5 +1,5 @@
 import { IoPauseSharp, IoPlaySharp, IoPlaySkipBackSharp, IoPlaySkipForwardSharp } from "react-icons/io5";
-import { LuHeart, LuRepeat2 } from "react-icons/lu";
+import { LuClock3, LuHeart, LuRepeat2 } from "react-icons/lu";
 import { TiArrowShuffle } from "react-icons/ti";
 
 export const buttonsDefinitions = {

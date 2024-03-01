@@ -4,18 +4,21 @@ import HomePage from "./components/HomePage";
 import Layout from "./components/Layout";
 import SearchPage from "./components/SearchPage";
 import PlaylistPage from "./components/PlayListPage";
+import SupabaseProvider from "./providers/SupabaseProvider";
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/playlist/:id" element={<PlaylistPage />} />
-        </Routes>
-      </Layout>
+      <SupabaseProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/playlist/:id" element={<PlaylistPage />} />
+          </Routes>
+        </Layout>
+      </SupabaseProvider>
     </BrowserRouter>
   );
 };
