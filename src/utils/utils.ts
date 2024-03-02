@@ -13,3 +13,9 @@ export const getIconSize = (iconSize: TSize) => {
   if (iconSize === "lg") return 24;
   if (iconSize === "xl") return 32;
 };
+
+export const getDuration = (duration: number): string => {
+  const minutes = Math.floor(duration / 60);
+  const seconds = duration - minutes * 60;
+  return `${minutes}:${String(seconds).padStart(2, "0")}`;
+};

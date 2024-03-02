@@ -2,6 +2,7 @@ import { LuClock3 } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import { Song } from "@/types/song";
 import { useSong } from "@/hooks/useSong";
+import { getDuration } from "@/utils/utils";
 
 interface PlayListTableProps {
   playListData: Song[];
@@ -54,13 +55,13 @@ const PlayListTable: React.FC<PlayListTableProps> = ({ playListData }) => {
                   <img src={song.imageUrl} alt={song.title} className="h-10 w-10 rounded-sm" />
                   <div className="flex flex-col justify-center pl-3">
                     <span>{song.title}</span>
-                    <span className="text-xs text-gray-400">Artist</span>
+                    <span className="text-xs text-gray-400">{song.artist}</span>
                   </div>
                 </div>
               </td>
-              <td className="hidden w-2/12 md:table-cell">Album</td>
+              <td className="hidden w-2/12 md:table-cell">{song.album}</td>
               <td className="hidden w-2/12 lg:table-cell">Date Added</td>
-              <td className="table-cell w-1/12 text-center">Duration</td>
+              <td className="table-cell w-1/12 text-center">{getDuration(song.duration)}</td>
             </tr>
           ))}
         </tbody>
