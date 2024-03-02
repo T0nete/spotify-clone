@@ -1,17 +1,22 @@
 import { LuClock3 } from "react-icons/lu";
-import { PlayList } from "@/constants/playlist";
-import useBucketData from "@/hooks/useBucketData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Song } from "@/types/song";
+import { useSong } from "@/hooks/useSong";
 
 interface PlayListTableProps {
-  playListData: PlayList;
+  playListData: Song[];
 }
 const PlayListTable: React.FC<PlayListTableProps> = ({ playListData }) => {
-  const { songs, images, error, isLoading } = useBucketData();
+  const { songs, error, isLoading, fetchSongDetails } = useSong();
+
+  console.log("playListData", playListData);
   const [currentSong, setCurrentSong] = useState<string>("");
 
-  console.log("songs", songs);
-  console.log("images", images);
+  useEffect(() => {
+    if (playListData) {
+      fetchSongDetails(playListData);
+    }
+  }, []);
 
   const handlePlay = (song: string) => {
     setCurrentSong(song);
@@ -40,19 +45,15 @@ const PlayListTable: React.FC<PlayListTableProps> = ({ playListData }) => {
               key={index}
               className="h-14 text-sm font-normal hover:bg-black-100"
               onClick={() => {
-                handlePlay(song.url);
+                handlePlay(song.audioFile);
               }}
             >
               <td className="table-cellw-1/12 text-center">{index + 1}</td>
               <td className="table-cell w-4/12">
                 <div className="flex flex-row">
-                  <img
-                    src={images?.find((image) => image.name === song.name)?.url}
-                    alt={song.name}
-                    className="h-10 w-10 rounded-sm"
-                  />
+                  <img src={song.imageUrl} alt={song.title} className="h-10 w-10 rounded-sm" />
                   <div className="flex flex-col justify-center pl-3">
-                    <span>{song.name}</span>
+                    <span>{song.title}</span>
                     <span className="text-xs text-gray-400">Artist</span>
                   </div>
                 </div>

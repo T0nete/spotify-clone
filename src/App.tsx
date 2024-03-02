@@ -12,7 +12,7 @@ const App: React.FC = () => {
       <SupabaseProvider>
         <Layout>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route index path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/playlist/:id" element={<PlaylistPage />} />

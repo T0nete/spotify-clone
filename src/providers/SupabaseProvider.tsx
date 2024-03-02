@@ -1,6 +1,6 @@
 import { SupabaseClient, createClient } from "@supabase/supabase-js";
 import { createContext } from "react";
-
+import { Database } from "@/types/supabase";
 interface SupabaseProviderProps {
   children: React.ReactNode;
 }
@@ -8,7 +8,7 @@ interface SupabaseProviderProps {
 export const SupabaseContext = createContext<{ supabase: SupabaseClient } | null>(null);
 
 const SupabaseProvider: React.FC<SupabaseProviderProps> = ({ children }) => {
-  const supabase = createClient(
+  const supabase = createClient<Database>(
     import.meta.env.VITE_SUPABASE_URL as string,
     import.meta.env.VITE_SUPABASE_API_KEY as string,
   );
