@@ -1,5 +1,5 @@
 import React from "react";
-import PlayerButtons from "./Player/PlayerButtons";
+import PlayerButtons from "@/components/Player/PlayerButtons";
 
 const MusicPlayer: React.FC = () => {
   return (

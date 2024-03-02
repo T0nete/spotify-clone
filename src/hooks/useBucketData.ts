@@ -1,15 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { SupabaseContext } from "../providers/SupabaseProvider";
 
-type FileObject = {
-  name: string;
-  bucket_id: string;
-  owner: string;
-  id: string;
-  updated_at: string;
-  created_at: string;
-};
-
 interface IBucketData {
   name: string;
   url: string;

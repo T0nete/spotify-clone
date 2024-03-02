@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { TSize, getButtonSize, getIconSize } from "../../utils/utils";
+import { TSize, getButtonSize, getIconSize } from "@/utils/utils";
 import { buttonsDefinitions } from "./iconsDefinitions";
 
 interface SizedButtonProps {

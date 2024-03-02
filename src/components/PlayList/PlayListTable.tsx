@@ -1,6 +1,6 @@
 import { LuClock3 } from "react-icons/lu";
-import { PlayList } from "../../constants/playlist";
-import useBucketData from "../../hooks/useBucketData";
+import { PlayList } from "@/constants/playlist";
+import useBucketData from "@/hooks/useBucketData";
 import { useState } from "react";
 
 interface PlayListTableProps {

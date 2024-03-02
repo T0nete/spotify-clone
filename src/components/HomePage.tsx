@@ -1,5 +1,5 @@
 import React from "react";
-import MainPlaylistList from "./PlayList/MainPlayListList";
+import MainPlaylistList from "@/components/PlayList/MainPlayListList";
 
 const HomePage: React.FC = () => {
   return (

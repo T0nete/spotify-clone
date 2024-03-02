@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SizedButton from "../buttons/SizedButton";
+import SizedButton from "@/components/buttons/SizedButton";
 
 const PlayerButtons: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);

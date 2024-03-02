@@ -1,4 +1,4 @@
-import NavigationButtons from "./buttons/NavigationButtons";
+import NavigationButtons from "@/components/buttons/NavigationButtons";
 
 const HeaderBar = () => {
   return (

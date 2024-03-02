@@ -1,5 +1,5 @@
-import SizedButton from "../buttons/SizedButton";
-import { buttonsDefinitions } from "../buttons/iconsDefinitions";
+import SizedButton from "@/components/buttons/SizedButton";
+import { buttonsDefinitions } from "@/components/buttons/iconsDefinitions";
 
 const PlaylistCommandButtons: React.FC = () => {
   return (

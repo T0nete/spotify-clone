@@ -1,6 +1,6 @@
 import React from "react";
-import { routes } from "../constants/route";
-import SideBarItem from "./SideBarItem";
+import { routes } from "@/constants/route";
+import SideBarItem from "@/components/SideBarItem";
 import { useLocation } from "react-router-dom";
 
 const SideBar: React.FC = () => {

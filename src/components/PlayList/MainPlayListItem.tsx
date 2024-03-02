@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { PlayList } from "../../constants/playlist";
-import SizedButton from "../buttons/SizedButton";
+import { PlayList } from "@/constants/playlist";
+import SizedButton from "@/components/buttons/SizedButton";
 
 interface MainPlaylistItemProps {
   playList: PlayList;

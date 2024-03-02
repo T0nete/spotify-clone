@@ -1,6 +1,6 @@
-import HeaderBar from "./HeaderBar";
-import MusicPlayer from "./MusicPlayer";
-import SideBar from "./SideBar";
+import HeaderBar from "@/components/HeaderBar";
+import MusicPlayer from "@/components/MusicPlayer";
+import SideBar from "@/components/SideBar";
 
 interface LayoutProps {
   children: React.ReactNode;

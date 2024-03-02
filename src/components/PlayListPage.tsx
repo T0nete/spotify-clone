@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { PlayList, playlist } from "../constants/playlist";
-import PlayListTable from "./PlayList/PlayListTable";
-import PlaylistCommandButtons from "./PlayList/PlaylistCommandButtons";
+import { PlayList, playlist } from "@/constants/playlist";
+import PlayListTable from "@/components/PlayList/PlayListTable";
+import PlaylistCommandButtons from "@/components/PlayList/PlaylistCommandButtons";
 
 interface PlaylistPageProps {}
 
