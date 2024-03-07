@@ -31,6 +31,7 @@ export const usePlaylistSongs = (): IUserPlaylistSongs => {
 
   const fetchPlaylist = useCallback(async (playlistId: string) => {
     setIsLoadingPlaylistData(true);
+    setPlaylistData(undefined);
     const playlistData = await fetchPlaylistData(playlistId);
     const playlistCover = fetchPlaylistCover(playlistId);
 
@@ -42,7 +43,7 @@ export const usePlaylistSongs = (): IUserPlaylistSongs => {
     setIsLoadingPlaylistData(false);
   }, []);
 
-  const fetchPlaylistData = async (playlistId: string): Promise<Playlist> => {
+  const fetchPlaylistData = useCallback(async (playlistId: string): Promise<Playlist> => {
     try {
       const { data: playlistData, error: playlistError } = await supabase
         .from("playlist")
@@ -59,7 +60,7 @@ export const usePlaylistSongs = (): IUserPlaylistSongs => {
       if (error instanceof Error) console.error(error);
       return {} as Playlist;
     }
-  };
+  }, []);
 
   const fetchPlaylistCover = (playlistId: string): string => {
     try {
@@ -75,6 +76,7 @@ export const usePlaylistSongs = (): IUserPlaylistSongs => {
     async (playlistId: string) => {
       try {
         setIsLoadingPlaylistSongs(true);
+        setPlaylistSongs(undefined);
         const { data: playlistSongs, error: playlistError } = await supabase
           .from("playlist_song")
           .select("song:id_song (id, title, artist, album, duration, created_at)")

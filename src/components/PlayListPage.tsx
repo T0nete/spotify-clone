@@ -20,9 +20,10 @@ const PlaylistPage: React.FC<PlaylistPageProps> = () => {
 
   useEffect(() => {
     if (!id) return;
+
     fetchPlaylist(id);
     fetchPlaylistSongs(id);
-  }, []);
+  }, [id]);
 
   if (!id) return;
 

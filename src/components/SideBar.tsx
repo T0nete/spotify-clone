@@ -1,7 +1,7 @@
 import React from "react";
 import { routes } from "@/constants/route";
 import SideBarItem from "@/components/SideBarItem";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LuLibrary } from "react-icons/lu";
 import { IoAddOutline } from "react-icons/io5";
 import { GoArrowRight } from "react-icons/go";
@@ -35,28 +35,17 @@ const SideBar: React.FC = () => {
         <div className="mt-2 flex flex-col overflow-y-auto">
           {playlist.map((item) => {
             return (
-              <div
-                key={item.title}
-                className="hover:bg-black-50 flex flex-row gap-x-2 rounded-md px-6 py-2 hover:cursor-pointer"
+              <Link
+                to={`/playlist/${item.id}`}
+                className="hover:bg-black-50 flex flex-row items-center rounded-lg hover:cursor-pointer"
               >
-                <img src={item.cover} alt={item.title} className="h-12 w-12 rounded-md" />
-                <div className="flex flex-col justify-center">
-                  <p className="text-md">{item.title}</p>
+                <div key={item.title} className=" flex flex-row gap-x-2 rounded-md px-6 py-2 hover:cursor-pointer">
+                  <img src={item.cover} alt={item.title} className="h-12 w-12 rounded-md" />
+                  <div className="flex flex-col justify-center">
+                    <p className="text-md">{item.title}</p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-          {playlist.map((item) => {
-            return (
-              <div
-                key={item.title}
-                className="hover:bg-black-50 flex flex-row gap-x-2 rounded-md px-6 py-2 hover:cursor-pointer"
-              >
-                <img src={item.cover} alt={item.title} className="h-12 w-12 rounded-md" />
-                <div className="flex flex-col justify-center">
-                  <p className="text-md">{item.title}</p>
-                </div>
-              </div>
+              </Link>
             );
           })}
         </div>
