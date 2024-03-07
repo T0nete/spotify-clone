@@ -85,7 +85,6 @@ export const usePlaylistSongs = (): IUserPlaylistSongs => {
         if (playlistError) {
           throw playlistError;
         }
-        console.log("song", Object.values(playlistSongs));
 
         const songs = playlistSongs.flatMap((song) => {
           return song.song;

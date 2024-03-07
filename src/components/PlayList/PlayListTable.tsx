@@ -10,7 +10,6 @@ interface PlayListTableProps {
 const PlayListTable: React.FC<PlayListTableProps> = ({ playListData }) => {
   const { songs, error, isLoading, fetchSongDetails } = useSong();
 
-  console.log("playListData", playListData);
   const [currentSong, setCurrentSong] = useState<string>("");
 
   useEffect(() => {

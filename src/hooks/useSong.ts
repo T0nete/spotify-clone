@@ -29,7 +29,6 @@ export const useSong = (): IUseSong => {
     try {
       setIsLoading(true);
       const songDetailsPromises = songs.map(async (song) => {
-        console.log(song.id);
         const imageUrl = supabase.storage.from("images/songs").getPublicUrl(song.id);
         const audioFile = supabase.storage.from("songs").getPublicUrl(song.id);
 
