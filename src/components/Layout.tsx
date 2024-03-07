@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div id="app" className="h-screen bg-black-900 p-2 text-default-text">
-      <aside className="rounded-lg [grid-area:aside]">
+      <aside className="overflow-y-auto rounded-lg [grid-area:aside]">
         <SideBar />
       </aside>
       <main className="max-h-dvh overflow-y-auto rounded-lg bg-black-300 [grid-area:main]">

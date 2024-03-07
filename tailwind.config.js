@@ -6,6 +6,7 @@ export default {
       colors: {
         "default-text": "#b3b3b3",
         black: {
+          50: "#232323",
           100: "#282828",
           200: "#181818",
           300: "#121212",
