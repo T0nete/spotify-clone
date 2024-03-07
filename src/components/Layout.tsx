@@ -7,7 +7,7 @@ interface LayoutProps {
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div id="app" className="h-screen bg-black-900 p-2 text-default-text">
+    <div id="app" className="font-circular h-screen bg-black-900 p-2 text-default-text">
       <aside className="overflow-y-auto rounded-lg [grid-area:aside]">
         <SideBar />
       </aside>

@@ -3,6 +3,16 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        circular: ["CircularStd", "sans-serif"],
+      },
+      fontWeight: {
+        light: 300,
+        book: 400,
+        medium: 500,
+        bold: 700,
+        black: 900,
+      },
       colors: {
         "default-text": "#b3b3b3",
         black: {
