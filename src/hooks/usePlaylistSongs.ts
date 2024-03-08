@@ -3,7 +3,7 @@ import { SupabaseContext } from "@/providers/SupabaseProvider";
 import { Playlist } from "@/types/playlist";
 import { Song } from "@/types/song";
 
-interface PlaylistData extends Playlist {
+export interface PlaylistData extends Playlist {
   cover: string;
 }
 interface IUserPlaylistSongs {

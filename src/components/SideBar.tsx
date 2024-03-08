@@ -1,7 +1,7 @@
 import React from "react";
 import { routes } from "@/constants/route";
 import SideBarItem from "@/components/SideBarItem";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { LuLibrary } from "react-icons/lu";
 import { IoAddOutline } from "react-icons/io5";
 import { GoArrowRight } from "react-icons/go";
@@ -9,6 +9,9 @@ import { playlist } from "@/constants/playlist";
 
 const SideBar: React.FC = () => {
   const location = useLocation();
+  const { id } = useParams();
+
+  console.log("id", id);
 
   return (
     <div className="flex h-full flex-col gap-2">
@@ -36,10 +39,11 @@ const SideBar: React.FC = () => {
           {playlist.map((item) => {
             return (
               <Link
+                key={`${item.id}_${item.title}`}
                 to={`/playlist/${item.id}`}
-                className="hover:bg-black-50 flex flex-row items-center rounded-lg hover:cursor-pointer"
+                className={`hover:bg-black-50 flex flex-row items-center rounded-lg hover:cursor-pointer ${id === item.id ? "bg-black-100" : ""}`}
               >
-                <div key={item.title} className=" flex flex-row gap-x-2 rounded-md px-6 py-2 hover:cursor-pointer">
+                <div className=" flex flex-row gap-x-2 rounded-md px-6 py-2 hover:cursor-pointer">
                   <img src={item.cover} alt={item.title} className="h-12 w-12 rounded-md" />
                   <div className="flex flex-col justify-center">
                     <p className="text-md">{item.title}</p>
