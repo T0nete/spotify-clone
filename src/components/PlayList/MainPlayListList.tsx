@@ -1,14 +1,10 @@
+import { PlaylistData } from "@/hooks/usePlaylistSongs";
 import MainPlaylistItem from "./MainPlayListItem";
-import usePlaylists from "@/hooks/usePlaylists";
-import { useEffect } from "react";
 
-const MainPlaylistList: React.FC = () => {
-  const { playLists, fetchPlayLists } = usePlaylists();
-
-  useEffect(() => {
-    fetchPlayLists();
-  }, [fetchPlayLists]);
-
+interface IMainPlaylistList {
+  playLists: PlaylistData[] | undefined;
+}
+const MainPlaylistList: React.FC<IMainPlaylistList> = ({ playLists }) => {
   return (
     <div className="grid grid-cols-1 gap-3 py-3 md:grid-cols-2 lg:grid-cols-3">
       {playLists?.map((item) => <MainPlaylistItem key={item.id} playList={item} />)}
