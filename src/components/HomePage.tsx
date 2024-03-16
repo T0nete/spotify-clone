@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import MainPlaylistList from "@/components/PlayList/MainPlayListList";
 import usePlaylists from "@/hooks/usePlaylists";
-import SizedButton from "./buttons/SizedButton";
+import { Link } from "react-router-dom";
+import PlayListCard from "./PlayList/PlayListCard";
 
 const HomePage: React.FC = () => {
   const { playLists, fetchPlayLists } = usePlaylists();
@@ -20,20 +21,9 @@ const HomePage: React.FC = () => {
         <h2 className="text-2xl font-bold text-white">Your shows</h2>
         <div className="flex flex-wrap justify-center">
           {playLists?.map((item) => (
-            <div className="group m-2 w-48 flex-shrink-0 rounded-md bg-black-200 p-3 hover:bg-black-100">
-              <div className="relative">
-                <img src={item.cover} alt={`Image of ${item.title}`} className="my-1 h-44 w-44 rounded-sm" />
-                <SizedButton
-                  buttonType="play"
-                  buttonSize="md"
-                  iconSize="xl"
-                  onClick={() => {}}
-                  className="animation-fadeInUp absolute bottom-1 right-1 hidden group-hover:block"
-                  iconClassName="pl-1"
-                />
-              </div>
-              <p className="my-1 text-white">{item.title}</p>
-            </div>
+            <Link to={`/playlist/${item.id}`} key={item.id}>
+              <PlayListCard playList={item} />
+            </Link>
           ))}
         </div>
       </section>
