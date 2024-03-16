@@ -1,15 +1,17 @@
 import { SupabaseContext } from "@/providers/SupabaseProvider";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { PlaylistData } from "./usePlaylistSongs";
 
 export interface IUserPlaylistSongs {
   playLists: PlaylistData[] | undefined;
+  isLoading: boolean;
   fetchPlayLists: () => Promise<void>;
 }
 export const usePlaylists = (): IUserPlaylistSongs => {
   const context = useContext(SupabaseContext);
 
   const [playLists, setPlayLists] = useState<PlaylistData[]>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   if (!context) {
     throw new Error("useBucketData must be used within a SupabaseProvider");
@@ -19,6 +21,7 @@ export const usePlaylists = (): IUserPlaylistSongs => {
 
   const fetchPlayLists = useCallback(async () => {
     try {
+      setIsLoading(true);
       const { data: playLists, error } = await supabase.from("playlist").select("*");
 
       playLists?.forEach((playlist) => {
@@ -33,6 +36,8 @@ export const usePlaylists = (): IUserPlaylistSongs => {
       setPlayLists(playLists);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 
@@ -48,6 +53,7 @@ export const usePlaylists = (): IUserPlaylistSongs => {
 
   return {
     playLists,
+    isLoading,
     fetchPlayLists,
   };
 };
