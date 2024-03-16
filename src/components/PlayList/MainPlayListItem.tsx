@@ -8,6 +8,7 @@ interface MainPlaylistItemProps {
 const MainPlaylistItem: React.FC<MainPlaylistItemProps> = ({ playList }) => {
   return (
     <Link
+      key={playList.id}
       to={`/playlist/${playList.id}`}
       className="group flex flex-row items-center rounded-lg  bg-black-200 hover:cursor-pointer hover:bg-black-100"
     >
